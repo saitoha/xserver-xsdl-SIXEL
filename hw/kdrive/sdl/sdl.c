@@ -502,7 +502,6 @@ static void sdlMouseDisable (KdPointerInfo *pi)
     return;
 }
 
-
 void InitCard(char *name)
 {
     KdCardInfoAdd (&sdlFuncs,  0);
@@ -512,6 +511,7 @@ void InitCard(char *name)
 void InitOutput(ScreenInfo *pScreenInfo, int argc, char **argv)
 {
     KdInitOutput(pScreenInfo, argc, argv);
+    signal(SIGHUP, SIG_DFL);
     TRACE("InitOutput()\n");
 }
 
