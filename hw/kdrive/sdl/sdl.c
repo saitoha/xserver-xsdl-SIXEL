@@ -667,6 +667,7 @@ static void sdlPollInput(void)
 static int xsdlInit(void)
 {
     TRACE("Calling SDL_Init()\n");
+    setenv("SDL_VIDEODRIVER", "sixel", 0 /* do not overwrite */);
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
     SDL_JoystickOpen(0); // Receive pressure events
     return 0;
