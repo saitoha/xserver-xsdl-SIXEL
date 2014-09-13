@@ -42,5 +42,3 @@ env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
 
 nice -n19 make -j8
 
-# run:
-# hw/kdrive/sdl/Xsdl :1 2>/dev/null
