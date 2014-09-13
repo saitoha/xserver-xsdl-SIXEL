@@ -3,7 +3,7 @@
 prefix=/usr/local
 x11prefix=/opt/X11
 
-env SDL=yes PKG_CONFIG_PATH="${prefix}/lib/pkgconfig:${x11prefix}/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
+env SDL=yes ACLOCAL="aclocal -I ${x11prefix}/share/aclocal" PKG_CONFIG_PATH="${prefix}/lib/pkgconfig:${x11prefix}/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
 ./autogen.sh \
     --prefix=${prefix} \
     --with-xkb-path=${x11prefix}/share/X11/xkb \
