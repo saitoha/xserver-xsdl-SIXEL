@@ -28,7 +28,7 @@
 #include "kdrive-config.h"
 #endif
 #include "kdrive.h"
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include <X11/keysym.h>
 #include <sys/wait.h>
 #include <pthread.h>
@@ -213,9 +213,9 @@ static Bool sdlScreenInit(KdScreenInfo *screen)
     //screen->fb.shadow = FALSE;
     screen->rate = 8; // 60 is too intense for CPU
 
-    SDL_WM_SetCaption("Freedesktop.org X server (SDL)", NULL);
+//    SDL_WM_SetCaption("Freedesktop.org X server (SDL)", NULL);
 
-    SDL_EnableUNICODE(1);
+//    SDL_EnableUNICODE(1);
 
     return sdlMapFramebuffer (screen);
 }

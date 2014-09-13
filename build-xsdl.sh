@@ -1,10 +1,11 @@
 #!/bin/sh
 
+prefix=/usr/local
 x11prefix=/opt/X11
 
-env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
+env SDL=yes PKG_CONFIG_PATH="${prefix}/lib/pkgconfig:${x11prefix}/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
 ./autogen.sh \
-    --prefix=${x11prefix} \
+    --prefix=${prefix} \
     --with-xkb-path=${x11prefix}/share/X11/xkb \
     --with-xkb-bin-directory=${x11prefix}/bin \
     --enable-debug \
@@ -41,4 +42,4 @@ env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
     --disable-kdrive-evdev \
 
 nice -n19 make -j8
-
+make install
