@@ -4,9 +4,11 @@ Xsdl server for libsixel/SDL1.2-SIXEL
 Build
 -----
 
-- install Homebrew
+- install Xcode
 
 - install Xquartz 2.7.7+
+
+- install Homebrew
 
 - build and install dependencies
 
