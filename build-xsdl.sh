@@ -35,6 +35,7 @@ env SDL=yes PKG_CONFIG_PATH="${prefix}/lib/pkgconfig:${x11prefix}/lib/pkgconfig"
     --disable-xdm-auth-1 \
     --disable-xinerama \
     --disable-docs \
+    --disable-xtrans-send-fds \
     --enable-xsdl \
     --enable-kdrive \
     --disable-kdrive-kbd \
