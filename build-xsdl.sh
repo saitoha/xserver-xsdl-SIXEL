@@ -2,7 +2,7 @@
 
 x11prefix=/opt/X11
 
-env SDL=yes CFLAGS="-O3 -Ofast" \
+env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
 ./autogen.sh \
     --prefix=${x11prefix} \
     --with-xkb-path=${x11prefix}/share/X11/xkb \
