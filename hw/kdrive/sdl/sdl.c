@@ -213,9 +213,9 @@ static Bool sdlScreenInit(KdScreenInfo *screen)
     //screen->fb.shadow = FALSE;
     screen->rate = 8; // 60 is too intense for CPU
 
-//    SDL_WM_SetCaption("Freedesktop.org X server (SDL)", NULL);
+    SDL_WM_SetCaption("Freedesktop.org X server (SDL)", NULL);
 
-//    SDL_EnableUNICODE(1);
+    SDL_EnableUNICODE(1);
 
     return sdlMapFramebuffer (screen);
 }

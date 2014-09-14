@@ -2311,7 +2311,7 @@ if test "$KDRIVE" = yes; then
     if test x"$ac_cv_header_SDL_SDL_h" = xyes && test "x$XSDL" = xauto; then
        XSDL=yes
     fi
- 
+
     if test x"$XSDL" = xyes; then
        # PKG_CHECK_MODULES(XSDL_EXTRA, Xfont xau $XDMCP_MODULES)
        AC_DEFINE(XSDLSERVER,1,[Build Xsdl server])

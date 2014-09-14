@@ -14,4 +14,4 @@ cd libsixel && \
     make install && \
     cd ../SDL1.2-SIXEL && \
     PKG_CONFIG_PATH="${prefix}/lib/pkgconifig" CFLAGS="-O3 -Ofast" ./configure --prefix=${prefix} --enable-video-sixel --without-x && \
-    make install 
+    make install
