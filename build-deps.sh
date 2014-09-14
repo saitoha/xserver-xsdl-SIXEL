@@ -10,8 +10,8 @@ git clone https://github.com/saitoha/libsixel.git
 git clone https://github.com/saitoha/SDL1.2-SIXEL.git
 
 cd libsixel && \
-    PKG_CONFIG_PATH="${prefix}/lib/pkgconifig" ./configure --prefix=${prefix} && \
+    PKG_CONFIG_PATH="${prefix}/lib/pkgconifig" CFLAGS="-O3 -Ofast" ./configure --prefix=${prefix} --with-libcurl && \
     make install && \
     cd ../SDL1.2-SIXEL && \
-    PKG_CONFIG_PATH="${prefix}/lib/pkgconifig" ./configure --prefix=${prefix} --enable-video-sixel --without-x && \
+    PKG_CONFIG_PATH="${prefix}/lib/pkgconifig" CFLAGS="-O3 -Ofast" ./configure --prefix=${prefix} --enable-video-sixel --without-x && \
     make install 
