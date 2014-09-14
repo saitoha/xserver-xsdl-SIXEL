@@ -44,6 +44,12 @@ or
   $ DISPLAY=:1 xterm
 ```
 
+- Keyboard layout fix for jp106
+
+```
+  $ SDL_SIXEL_KBD=jp106 Xsdl :1 2 -exec xterm 2> /dev/null
+```
+
 - Stop
 
 ```
