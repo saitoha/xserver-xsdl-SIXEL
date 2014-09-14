@@ -1,10 +1,11 @@
 #!/bin/sh
 
-x11prefix=/opt/X11
+prefix=/usr/local
+x11prefix=/usr/local
 
-env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
+env SDL=yes ACLOCAL="aclocal -I ${x11prefix}/share/aclocal" PKG_CONFIG_PATH="${prefix}/lib/pkgconfig:${x11prefix}/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
 ./autogen.sh \
-    --prefix=${x11prefix} \
+    --prefix=${prefix} \
     --with-xkb-path=${x11prefix}/share/X11/xkb \
     --with-xkb-bin-directory=${x11prefix}/bin \
     --enable-debug \
@@ -34,6 +35,7 @@ env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
     --disable-xdm-auth-1 \
     --disable-xinerama \
     --disable-docs \
+    --disable-xtrans-send-fds \
     --enable-xsdl \
     --enable-kdrive \
     --disable-kdrive-kbd \
@@ -41,6 +43,4 @@ env SDL=yes PKG_CONFIG_PATH="/opt/X11/lib/pkgconfig" CFLAGS="-O3 -Ofast" \
     --disable-kdrive-evdev \
 
 nice -n19 make -j8
-
-# run:
-# hw/kdrive/sdl/Xsdl :1 2>/dev/null
+make install

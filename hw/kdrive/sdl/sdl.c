@@ -28,7 +28,7 @@
 #include "kdrive-config.h"
 #endif
 #include "kdrive.h"
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include <X11/keysym.h>
 #include <sys/wait.h>
 #include <pthread.h>

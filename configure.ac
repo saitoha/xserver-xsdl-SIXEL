@@ -835,7 +835,7 @@ SDK_REQUIRED_MODULES="$XPROTO $RANDRPROTO $RENDERPROTO $XEXTPROTO $INPUTPROTO $K
 # Make SDK_REQUIRED_MODULES available for inclusion in xorg-server.pc
 AC_SUBST(SDK_REQUIRED_MODULES)
 
-REQUIRED_MODULES="$FIXESPROTO $DAMAGEPROTO $XCMISCPROTO $XTRANS $BIGREQSPROTO $SDK_REQUIRED_MODULES"
+REQUIRED_MODULES="$FIXESPROTO $DAMAGEPROTO $XCMISCPROTO $BIGREQSPROTO $SDK_REQUIRED_MODULES"
 
 dnl systemd socket activation
 dnl activate the code in libxtrans that grabs systemd's socket fds
@@ -2376,8 +2376,9 @@ if test "$KDRIVE" = yes; then
     if test x"$XSDL" = xyes; then
        # PKG_CHECK_MODULES(XSDL_EXTRA, Xfont xau $XDMCP_MODULES)
        AC_DEFINE(XSDLSERVER,1,[Build Xsdl server])
-       XSDL_LIBS="`sdl-config --libs`"
-       XSDL_INCS="`sdl-config --cflags` $XSERVER_CFLAGS"
+       PKG_CHECK_MODULES([SDL], [sdl])
+       XSDL_LIBS="${SDL_LIBS}"
+       XSDL_INCS="${SDL_CFLAGS} $XSERVER_CFLAGS"
     fi
 
     XEPHYR_REQUIRED_LIBS="xau xdmcp xcb xcb-shape xcb-aux xcb-image xcb-icccm xcb-shm xcb-keysyms xcb-randr"
