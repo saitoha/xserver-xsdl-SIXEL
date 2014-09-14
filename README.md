@@ -1,14 +1,20 @@
 Xsdl server for libsixel/SDL1.2-SIXEL
 =====================================
 
-Build
------
+Build on OSX
+-------------
 
 - install Xcode
 
 - install Xquartz 2.7.7+
 
 - install Homebrew
+
+- git clone https://github.com/saitoha/xserver-xsdl-SIXEL.git
+
+- cd xserver-xsdl-SIXEL
+
+- git checkout sixel-for-Xquartz
 
 - build and install dependencies
 
@@ -34,7 +40,7 @@ Control
 or
 
 ```
-  $ Xsdl :1
+  $ Xsdl :1 2> /dev/null
   $ DISPLAY=:1 xterm
 ```
 
